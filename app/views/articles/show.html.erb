@@ -1,8 +1,12 @@
-<h1>Article</h1>
-<h3><%= @article.title %></h3>
-<p><%= @article.content %></p>
-<%= link_to "Edit article", edit_article_path(@article) %>
-<br>
-<%= link_to "Delete article", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
-<br>
-<%= link_to "Back to list", articles_path %>
+<article>
+  <h1><%= @article.title %></h1>
+  <hr>
+  <p><%= @article.content %></p>
+</article>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <%= link_to "Edit", edit_article_path(@article), class: "btn btn-sm btn-outline-secondary" %>
+  <%= link_to "Delete", article_path(@article), class: "btn btn-sm btn-outline-secondary", method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to "List", articles_path, class: "btn btn-sm btn-outline-secondary" %>
+</div>
+<!-- <br>
+<%= link_to "Back to list", articles_path %> -->
